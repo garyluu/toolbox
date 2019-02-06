@@ -43,8 +43,16 @@ workflow CRAM_to_md5sum {
                     inputCRAMIndexFile = inputCRAMIndexFile,
                     inputFileName = inputFileName, referenceFile = referenceFile,
                     referenceIndexFile = referenceIndexFile,
-                    disk_size = ref_size + cram_size + additional_disk}
+                    disk_size = ref_size + cram_size + additional_disk
+  }
+
   output {
     File md5sum_value = md5.value
+  }
+
+  meta {
+    author : "Walt Shands"
+    email : "jshands@ucsc.edu"
+    description: "Computes the md5sum value of an input CRAM file. Output is saved to .value file."
   }
 }
