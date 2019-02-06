@@ -36,4 +36,9 @@ workflow CRAM_to_md5sum_checker {
   output {
     File result = checkmd5.value
   }
+  meta {
+      author : "Walt Shands"
+      email : "jshands@ucsc.edu"
+      description: "Checker workflow that compares an input md5sum value file to a truth md5sum value file."
+  }
 }
